@@ -1,5 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js 13,](https://nextjs.org/) project bootstrapped with [`create-next-app@latest --experimental-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About the Project
+In this project I tried to implement `apDir` Next 13 experimental feature, for implementing frontend for Sanity.io clienet. Basically the content is similary to a blog but has used some featured model for my purpose.
 
+For CSS requirement TailwindCSS and Daisi UI theme is implemented , along with native CSS.
+
+# Features
+The App has following feature
+* Deployable to Vercel
+* A full functioned Commenting System
+* User friendly theme, ideal for reading for a long time.
+* Has an inbuilt visitor tracking system.
+## Modules Used
+1. TailwindCSS
+2. Nextjs 13
+3. Disy UI
+4. sanity CMS
+5. next-sanity
+6. react-syntax-highlighter
 ## Getting Started
 
 First, run the development server:

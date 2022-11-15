@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const nextConfig =  {
+  
+   reactStrictMode:false,
   experimental: {
+    transpilePackages: ["ui"],
     appDir: true,
   },
 }
