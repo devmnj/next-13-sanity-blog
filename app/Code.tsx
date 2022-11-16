@@ -4,7 +4,7 @@ import React from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { duotoneSea } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-export default function Code(props){
+export default function Code(props: { children: string | string[]; }){
     return (
        <>
     
