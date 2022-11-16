@@ -7,7 +7,7 @@ export default function SearchBox() {
   
   const [kw, setKw] = useState(searchContext?.skw);
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { value: any; }; }) => {
     setKw(e.target.value);
     searchContext?.changeKw(kw);
   }

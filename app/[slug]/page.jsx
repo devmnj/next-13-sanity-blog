@@ -21,12 +21,12 @@ const getAllPosts = async () => {
 
 export async function generateStaticParams() {
   const res = await getAllPosts();
-  return res?.map((post: { slug: { current: any } }) => ({
+  return res?.map((post ) => ({
     slug: post.slug.current,
   }));
 }
 
-async function getData(slug: string) {
+async function getData(slug ) {
   const res = await client.fetch(
     `*[_type == "post" && slug.current =='${slug}']{title,_id,content,featured_image,summary,tags,_createdAt,view,references[],recommended[]->{
       title,
@@ -67,7 +67,7 @@ const myPortableComponents = {
     normal: ({ children }) => <p className="my-3 text-2xl">{children}</p>,
   },
   types: {
-    code: ({ value }) => <Code>{value.code}</Code>,
+    code: ({ value }) => <Code>{value?.code}</Code>,
     image: ({ value }) => (
       <div className="place-content-center flex w-5/6 h-3/5">
         <img src={`${urlFor(value)}`} alt="media"/>
@@ -76,7 +76,7 @@ const myPortableComponents = {
   },
 };
 
-const Comment =(props:{name:String,date:string,comment:string})=>{
+const Comment =(props )=>{
   return(
     <div className="space-y-4 mb-2">
 								<div className="flex">
@@ -101,7 +101,7 @@ const Comment =(props:{name:String,date:string,comment:string})=>{
 		</div>
   )
 }
-const RecommendedPosts=(props: { posts: any[]; })=>{
+const RecommendedPosts=(props )=>{
   if(props?.posts?.length>0)
   return(
     <>
@@ -114,7 +114,7 @@ const RecommendedPosts=(props: { posts: any[]; })=>{
 }
 
 
-const Comments =(props: { data: any[]; })=>{
+const Comments =(props )=>{
   //  console.log(props.data);
   
 if(props?.data.length>0){
@@ -132,7 +132,7 @@ if(props?.data.length>0){
 }
 
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params } ) {
   const data = await getData(params.slug);
   
   if (!data[0])
@@ -185,7 +185,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="">
        
           {data[0]?.tags?.map(
-            (t: string) => (
+            (t ) => (
               <div key={t} className="uppercase mx-2 text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-blue-600 text-white rounded-full">
                 {t}
               </div>
