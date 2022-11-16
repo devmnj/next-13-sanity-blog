@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function RPCard(props) {
+export default function RPCard(props: { slug: any; cover: string | undefined; title: string | number | boolean | React.ReactFragment | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | null | undefined; summary: string | number | boolean | React.ReactFragment | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | null | undefined; }) {
   return (
     <Link href={`/${props.slug}`} className="m-2">
       <div className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-lg shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">

@@ -1,7 +1,33 @@
-import React from "react";
-"use client";
-export const Nav = () => {
+'use client'
+import React, { useState } from "react";
+import { createContext } from 'react';
+import SearchBox from './SearchBox'
+export const SearchContext =createContext();
+
+const SearchProvider=({children})=>{
+ const [skw, setSkw] = useState('Next');
+
+  const changeKw=(value)=>{
+    if(value){
+      setSkw(value);
+    }
+  };
+
+  return(
+  <>
+  <SearchContext.Provider value={{skw,changeKw}}>
+    {children}
+  </SearchContext.Provider>  
+  </>
+  )
+}
+
+
+export const Nav = (props) => {
+    
   return (
+    <>
+    <SearchProvider>
     <div className="navbar bg-base-300">
       <div className="navbar-start">
         <div className="dropdown">
@@ -47,7 +73,9 @@ export const Nav = () => {
         </a>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        <SearchBox/>
+            
+        {/* <button className="btn btn-ghost btn-circle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -62,7 +90,7 @@ export const Nav = () => {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </button>
+        </button> */}
         <button className="btn btn-ghost btn-circle">
           <div className="indicator">
             <svg
@@ -84,5 +112,8 @@ export const Nav = () => {
         </button>
       </div>
     </div>
+    {props.children}
+    </SearchProvider>
+    </>
   );
 };

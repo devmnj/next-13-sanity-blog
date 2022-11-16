@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import "./globals.css";
 import { Nav } from "./Nav";
  
@@ -16,9 +17,12 @@ export default function RootLayout({
       <head />
 
       <body>
-        <Nav />
-        <div  className="bg-base-100 text-white items-center overflow-auto">{children}</div>
+        <Nav  >
+          <div className="bg-base-100 text-white items-center overflow-auto">{children}</div>
+        </Nav>
+        <Footer/>
       </body>
+     
     </html>
   );
 }
