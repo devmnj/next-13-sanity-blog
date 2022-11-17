@@ -8,7 +8,7 @@ export const Card=(props: { cover: string | undefined; slug: any; title: string 
         <div className="lg:flex">
    
             <img
-                className="object-fit w-2/6 h-auto  rounded-lg lg:w-64"
+                className="object-fit w-2/6 h-5/12  rounded-lg lg:w-64"
                 src= {props?.cover}
                 alt=""
             />
