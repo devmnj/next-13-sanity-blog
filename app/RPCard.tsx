@@ -8,7 +8,7 @@ export default function RPCard(props: { slug: any; cover: string | undefined; ti
     <Link href={`/${props.slug}`} className="m-2">
       <div className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-lg shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
         <div className="w-full md:w-1/3 bg-white grid place-items-center">
-          <img src={props?.cover} alt="cover image" className="rounded-xl" />
+          <img src={props?.cover}  alt="cover image" className="w-3/6 h-2/6 rounded-xl" />
         </div>
         <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
           <div className="flex justify-between item-center">
